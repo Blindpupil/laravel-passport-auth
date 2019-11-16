@@ -1,16 +1,27 @@
 <template>
     <div class="container">
-        <p style="font-weight: lighter">Lighter</p>
-        <p style="font-weight: normal">Normal</p>
-        <p style="font-weight: bold">Bold</p>
-        <p style="font-weight: bolder">Bolder</p>
+        <p class="lighter">Lighter</p>
+        <p class="regular">Regular</p>
+        <p style="font-weight: 500">Medium</p>
+        <p style="font-weight: 700">Bold</p>
+        <p style="font-weight: 900">Black</p>
     </div>
 </template>
 
 <script>
-export default {
-  mounted() {
-    console.log('Component mounted.')
-  },
-}
+export default {}
 </script>
+
+<style lang="scss">
+.container {
+    font-family: $font-family-sans-serif;
+}
+
+.lighter {
+    font-weight: $font-lighter;
+}
+
+.regular {
+    font-weight: $font-regular;
+}
+</style>

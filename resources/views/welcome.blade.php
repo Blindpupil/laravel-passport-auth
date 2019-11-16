@@ -3,19 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Piperade</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-    <App></App>
-</div>
+<div id="app"></div>
 
 <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
-<script type="text/javascript" src="{{ mix('js/manifest.js') }}"></script>
-<script type="text/javascript" src="{{ mix('js/vendor.js') }}"></script>
 </body>
 </html>
