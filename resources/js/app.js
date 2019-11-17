@@ -2,6 +2,7 @@ import './bootstrap'
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
 import App from './components/App.vue'
+import router from './router'
 
 const opts = {
     icons: {
@@ -38,6 +39,7 @@ Vue.component('App', require('./components/App.vue').default)
 
 new Vue({
     vuetify,
+    router,
     el: '#app',
-    render: (h) => h(App)
-});
+    render: (h) => h(App),
+})
