@@ -1,8 +1,9 @@
 import './bootstrap'
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
-import App from './components/App.vue'
+import store from './store'
 import router from './router'
+import App from './components/App.vue'
 
 const opts = {
     icons: {
@@ -24,6 +25,7 @@ const vuetify = new Vuetify(opts)
 
 Vue.use(Vuetify)
 
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -40,6 +42,7 @@ Vue.component('App', require('./components/App.vue').default)
 new Vue({
     vuetify,
     router,
+    store,
     el: '#app',
     render: (h) => h(App),
 })

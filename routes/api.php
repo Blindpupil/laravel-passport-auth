@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group(['middleware' => ['user.token.request', 'auth:api']], function ()
+Route::group(['middleware' => ['auth:api']], function ()
 {
     Route::get('user', function (Request $request)
     {

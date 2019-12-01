@@ -20,7 +20,6 @@ class PersonalAccessTokenController extends Controller
         }
 
         $user = Auth::getUser();
-
         $personal_access_token = $user->createToken('UserToken');
 
         return $this->generateBearerTokenHttpResponse($personal_access_token);
