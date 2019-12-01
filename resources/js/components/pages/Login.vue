@@ -1,43 +1,59 @@
 <template>
-    <v-form ref="form" v-model="valid" lazy-validation>
-        <v-text-field v-model="email"
-                      label="E-mail"
-                      type="email"
-                      :rules="emailRules"
-                      required
-        ></v-text-field>
+	<auth-layout>
+		<h4 class="display-1">Login</h4>
 
-        <v-text-field
-            v-model="password"
-            label="Password"
-            type="password"
-            :rules="passwordRules"
-            required
-        ></v-text-field>
+		<v-form ref="form" v-model="valid" lazy-validation>
+			<v-text-field v-model="email"
+										label="E-mail"
+										type="email"
+										:rules="emailRules"
+										required
+			></v-text-field>
 
-        <v-btn :disabled="!valid" color="success" class="mr-4" @click="login">
-            Login
-        </v-btn>
+			<v-text-field
+							v-model="password"
+							label="Password"
+							type="password"
+							hint="At least 6 characters"
+							:append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+							:type="show ? 'text' : 'password'"
+							:rules="passwordRules"
+							@click:append="show = !show"
+							required
+							counter
+			></v-text-field>
 
-        <v-btn color="error" class="mr-4" @click="reset">
-            Reset Form
-        </v-btn>
+			<v-btn block large :disabled="!valid" color="primary" class="my-6" @click="login">
+				Login
+			</v-btn>
 
-        <p class="error" v-if="error" v-text="error"></p>
-    </v-form>
+			<p class="font-weight-bold text-center">
+				You don't have an account yet?
+				<router-link to="/register" class="text-link-primary"> Register</router-link>
+			</p>
+
+			<p class="error" v-if="error" v-text="error"></p>
+		</v-form>
+	</auth-layout>
 </template>
 
 <script>
+
+
 export default {
   data: () => ({
     valid: true,
     email: '',
+    show: false,
     emailRules: [
       v => !!v || 'E-mail is required',
       v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
     ],
     password: '',
-    passwordRules: [v => !!v || 'Password is required'],
+    passwordRules: [
+      v => !!v || 'Password is required',
+      v => v.length >= 6 || 'Password must be least 6 characters',
+    ],
     error: null,
   }),
 
@@ -57,9 +73,6 @@ export default {
         const { isLoggedIn } = this.$store.state
         if (isLoggedIn) this.$router.push('/app')
       }
-    },
-    reset() {
-      this.$refs.form.reset()
     },
   },
 }

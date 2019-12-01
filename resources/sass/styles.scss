@@ -3,5 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:light,regular,medium,bold,black');
 
 $material-light: map-merge($material-light, (
-    cards: lightgrey
+    'buttons': (
+        'disabled': #FFF,
+        'focused': #e77b7d
+    )
 ));
