@@ -4,7 +4,7 @@
 
 $material-light: map-merge($material-light, (
     'buttons': (
-        'disabled': #FFF,
-        'focused': #e77b7d
+        'disabled': $disabled-button-text,
+        'focused': $primary-disabled
     )
 ));
