@@ -1,4 +1,5 @@
 import './bootstrap'
+import '@mdi/font/css/materialdesignicons.css'
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
 import store from './store'
@@ -6,20 +7,17 @@ import router from './router'
 import App from './components/App.vue'
 
 const opts = {
-    icons: {
-        iconfont: 'mdi',  // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4'
-    },
-    theme: {
-        dark: false,
-    },
+  theme: {
+    dark: false,
     themes: {
-        light: {
-            primary: '#4682b4',
-            secondary: '#b0bec5',
-            accent: '#8c9eff',
-            error: '#b71c1c',
-        },
+      light: {
+        primary: '#DE4E51',
+        secondary: '#b0bec5',
+        accent: '#8c9eff',
+        error: '#b71c1c',
+      },
     },
+  },
 }
 const vuetify = new Vuetify(opts)
 
@@ -40,9 +38,9 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 Vue.component('App', require('./components/App.vue').default)
 
 new Vue({
-    vuetify,
-    router,
-    store,
-    el: '#app',
-    render: (h) => h(App),
+  vuetify,
+  router,
+  store,
+  el: '#app',
+  render: (h) => h(App),
 })

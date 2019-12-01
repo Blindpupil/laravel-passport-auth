@@ -1,7 +1,21 @@
 $font-family-sans-serif: "Roboto", sans-serif;
 
-$font-lighter: 100;
-$font-regular: 400;
-$font-medium: 500;
-$font-bold: 700;
-$font-black: 900;
+$spacer: 4px;
+$grid-gutter: $spacer * 6;
+$container-padding-x: $grid-gutter;
+
+$headings: (
+    'h4': (
+        'weight': 500
+    ),
+    'h5': (
+        'size': 1.625rem,
+        'weight': 700
+    ),
+);
+
+// Colors
+$primary: #DE4E51;
+$primary-disabled: #E77B7D;
+
+$disabled-button-text: #FFF;
