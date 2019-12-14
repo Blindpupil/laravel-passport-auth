@@ -25,8 +25,12 @@ export default {
     const response = await axios.get('/api/user')
     return response.data
   },
-  async register(user) {
-    const response = await axios.post('/api/user', user)
-    return response.data
+  async register(userInputs) {
+    try {
+      const response = await axios.post('/api/register', userInputs)
+      return response.data
+    } catch(e) {
+      return errorHandler(e)
+    }
   },
 }
