@@ -29,5 +29,13 @@ export default new Vuex.Store({
       await api.logout()
       commit('setIsLoggedIn', false)
     },
+    async register({ commit, dispatch }, userInputs) {
+      const user = await api.register(userInputs)
+
+      if (user) {
+        const { email, password } = userInputs
+        await dispatch('login', { email, password })
+      }
+    },
   },
 })
