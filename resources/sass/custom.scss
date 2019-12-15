@@ -14,3 +14,7 @@
   @extend .text-link;
   @extend .color-primary;
 }
+
+.recipe-view-content-height {
+  height: $recipe-view-content-height;
+}

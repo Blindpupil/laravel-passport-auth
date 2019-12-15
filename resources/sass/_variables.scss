@@ -4,6 +4,8 @@ $spacer: 4px;
 $grid-gutter: $spacer * 6;
 $container-padding-x: $grid-gutter;
 
+$recipe-view-content-height: calc(100vh - 276px); // header + footer + gutters + add recipe button = 276px
+
 $headings: (
     'h4': (
         'weight': 500
