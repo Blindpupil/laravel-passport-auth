@@ -1,5 +1,4 @@
 import './bootstrap'
-import '@mdi/font/css/materialdesignicons.css'
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
 import store from './store'
@@ -7,6 +6,7 @@ import router from './router'
 import App from './components/App.vue'
 
 const opts = {
+  iconfont: 'mdiSvg',
   theme: {
     dark: false,
     themes: {
